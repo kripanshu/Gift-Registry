@@ -29,10 +29,14 @@
     font-size: 100%;
 }
 
+#logform{
+    display: hidden;
+}
+
 .btn, #newuser:hover,#welcome:hover{
 	background-color:black ;
     color: #fed136;
-    border: none;	
+    border: none;
 }
 .btn:hover {
     background-color:#fed136;
@@ -48,12 +52,12 @@
     filter: blur(20px);
 }
 body {
-    
+
     padding-bottom: 40px;
     background-color: #eee;
   }
   .bg {
-    height: 100%; 
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -61,32 +65,39 @@ body {
       color: black;
       font-family: Montserrat,'Kaushan Script','Helvetica Neue',Helvetica,Arial,sans-serif;
   }
-  
-  .form-register {
-    max-width: 450px;
+
+  .form-signin {
+    max-width: 330px;
     padding: 15px;
     margin: 0 auto;
   }
-  .form-register-heading{
+  .form-signin-heading{
       text-align: center;
   }
-  .form-register .form-register-heading {
+  .form-signin .form-signin-heading {
     margin-bottom: 10px;
   }
-  .form-register .form-control {
+  .form-signin .form-control {
     position: relative;
     box-sizing: border-box;
     height: auto;
     padding: 10px;
     font-size: 16px;
   }
-  .form-register .form-control:focus {
+  .form-signin .form-control:focus {
     z-index: 2;
   }
-  .form-register input {
+  .form-signin input[type="email"] {
     margin-bottom: 5px;
-    margin-bottom: 5px;   
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
   }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
   main {
     margin: 100px auto;
     position: relative;
@@ -95,11 +106,11 @@ body {
     font-size: 20px;
     line-height: 1.5;
     border-radius: 10px;
-    width: 60%;
+    width: 50%;
     box-shadow: 5px 3px 30px black;
     overflow: hidden;
   }
-  
+
   main::before {
     content: '';
     margin: -35px;

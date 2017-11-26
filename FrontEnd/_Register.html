@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blaugranes - Gift Registry</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="Script/tableSort.js"></script>
+        <script type="text/javascript" src="Script/tablesearch.js"></script>
+
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="Style/Register.css">
+
+    </head>
+    <body class="bg" background="img/header-bg.jpg">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark" id="mainNav">
+                <a class="navbar-brand" href="#">Blaugranes</a>
+        </nav>
+
+        <div class="container" id="registerform">
+            <div class="row main">
+                <div class="container" id="formContainer">
+                    <main id="mainregister" >
+                        <form class="form-register" id="register" role="form">
+                            <h3 class="form-register-heading" id="formheader"><b>Register</b></h3>
+                          <h5>Name :</h5>
+                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name" required autofocus>
+                            <input type="text" class="form-control" name="midinit" id="midinit" placeholder="Middle Initial" maxlength="1" onkeydown="upperCaseF(this)">
+                            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" required>
+                            <h5>Email Address:</h5>
+                            <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email address" required >
+                            <h5>Phone Number:</h5>
+                            <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Phone number" pattern="[0-9]" required >
+                            <h5>Address:</h5>
+                            <input type="text" class="form-control" name="street" id="street" placeholder="Street" required >
+                            <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Zipcode" pattern="[0-9]" required >
+                            <input type="text" class="form-control" name="state" id="state" placeholder="State" maxlength="2"onkeydown"upperCaseF(this)" required > 
+                            <input type="text" class="form-control" name="country" id="country" placeholder="Country" required >
+                            <br/>
+                            <input type="password" class="form-control" name="registerPass" id="registerPass" placeholder="Password" required>
+                            <input type="password" class="form-control" name="cregisterPass" id="cregisterPass" placeholder="Confirm Password" required>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Lets get started!</button>
+                            <br/>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            function upperCaseF(a){
+                setTimeout(function(){
+                a.value = a.value.toUpperCase();
+                }, 1);
+                }
+        </script>
+    </body>
+</html>
