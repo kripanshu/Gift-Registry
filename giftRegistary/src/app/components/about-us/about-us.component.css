@@ -1,0 +1,70 @@
+#mainNav .navbar-brand{color:#fed136;font-family:'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive}
+#mainNav .navbar-brand.active,#mainNav .navbar-brand:active,#mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{color:#fec503}
+#mainNav .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    background-color: #fed136;
+    font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#btnwrapper{
+    text-align:center;
+}
+.btn{
+	background-color:black ;
+    color: #fed136;
+    border: none;	
+}
+.btn:hover {
+    background-color:#fed136;
+    color: black;
+}
+.btn:active {
+	background-color:#fed136;
+    color: black;
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
+}
+
+.team-member{margin-bottom:50px;text-align:center}
+.team-member img{width:225px;height:225px;border:7px solid #fff}
+.team-member h4{margin-top:25px;margin-bottom:0;text-transform:none}
+.team-member p{margin-top:0}
+ul.social-buttons li a {
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    color: #fff;
+    border-radius: 100%;
+    outline: 0;
+    background-color: #212529;
+    }
+ul.social-buttons li a:hover { 
+    background-color: #fed136;
+}
+#mainNav .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    background-color: #fed136;
+    font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+/* #kripanshu
+{
+background-image:url('../../assets/images/1.jpg');
+}
+#mital
+{
+    background-image:url('../../assets/images/2.jpg');
+} */

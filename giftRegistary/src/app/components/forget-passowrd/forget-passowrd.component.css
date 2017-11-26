@@ -1,0 +1,124 @@
+#mainNav .navbar-brand{color:#fed136;font-family:'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive}
+#mainNav .navbar-brand.active,#mainNav .navbar-brand:active,#mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{color:#fec503}
+#mainNav .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    background-color: #fed136;
+    font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#btnwrapper{
+    text-align:center;
+}
+#newuser{
+    background-color:#fed136 ;
+    color: black;
+}
+
+#welcome{
+    width: 25%;
+    height: 10em;
+    border-radius: 12px;
+    background-color:#fed136 ;
+    color: black;
+    align-self: center;
+    font-family: Montserrat,'Kaushan Script','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 100%;
+}
+
+#logform{
+    display: hidden;
+}
+
+.btn, #newuser:hover,#welcome:hover{
+	background-color:black ;
+    color: #fed136;
+    border: none;
+}
+.btn:hover {
+    background-color:#fed136;
+    color: black;
+}
+.btn:active {
+	background-color:#fed136;
+    color: black;
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
+}
+.filter {
+    filter: blur(20px);
+}
+body {
+
+    padding-bottom: 40px;
+    background-color: #eee;
+  }
+  .bg {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  #formheader{
+      color: black;
+      font-family: Montserrat,'Kaushan Script','Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin-heading{
+      text-align: center;
+  }
+  .form-signin .form-signin-heading {
+    margin-bottom: 10px;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  main {
+    margin: 100px auto;
+    position: relative;
+    padding: 5px 5px;
+    background: hsla(0,0%,100%,.3);
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 5px 3px 30px black;
+    overflow: hidden;
+  }
+
+  main::before {
+    content: '';
+    margin: -35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(20px);
+    z-index: -1;
+  }

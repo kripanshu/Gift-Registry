@@ -1,0 +1,33 @@
+<div class="question" *ngFor="let question of questions">
+        <div class="card">
+          <div class="card-header">
+            {{ question.text }} <a href="#" routerLink="/forgetpasswrd" style="float:right;"class="btn btn-link" (click)="question.hide = !question.hide">Show</a>
+          </div>
+          <div class="card-block" [hidden]="question.hide">
+        
+                <input type="text" placeholder="Answer here " class="form-control"  name="answer">
+              </div>
+        </div>
+        <br>
+      </div>
+
+      <div class="card">
+            <div class="card-header" style="text-align:center;">
+              Change Password
+            </div>
+            <div class="card-block">
+              <form (submit)="addQuestion()">
+                <div class="form-group">
+                  <label for="text">New Password</label>
+                  <input type="text" class="form-control"  name="text">
+                </div>
+                <div class="form-group">
+                  <label for="text">Confirm Password</label>
+                  <input type="text" class="form-control"  name="answer">
+                </div>
+                <input type="submit" style="margin-left: 48%;"class="btn btn-primary" value="Submit">
+              </form>
+            </div>
+          </div>
+          
+      

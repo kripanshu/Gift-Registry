@@ -1,0 +1,35 @@
+<div class="container" id="logform">
+    <div class="row main">
+        <div class="container" id="formContainer">
+            <main id="mainlogin" >
+            <form class="form-signin" id="login" role="form" (submit)="onSubmit()">
+                <h3 class="form-signin-heading" id="formheader">Log in</h3>
+                <input type="email" class="form-control"
+                [ngClass]="{'is-invalid':userEmail.errors?.required && userEmail.touched ||userEmail.errors?.pattern}"
+                [(ngModel)]="email_input" 
+                #userEmail = "ngModel"
+                pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+                name="loginEmail" id="loginEmail" placeholder="Email address" required autofocus>
+                <div *ngIf="userEmail.errors?.required && userEmail.touched" class="invalid-feedback">
+                        Email is required.
+                        </div>
+                        <div *ngIf="userEmail.errors?.pattern && userEmail.touched" class="invalid-feedback">
+                        Email is invalid.
+                        </div>
+                <input type="password"  class="form-control" name="loginPass" 
+                [ngClass]="{'is-invalid':userPassword.errors?.required && userPassword.touched}"
+                [(ngModel)]="password_input" 
+                #userPassword = "ngModel"
+            id="loginPass" placeholder="Password" required>
+            <div *ngIf="userPassword.errors?.required && userPassword.touched" class="invalid-feedback">
+                    Password is required.
+                    </div>
+                <input class="btn btn-lg btn-primary btn-block" href="#" type="submit" value="SignIn">
+                <br/>
+            </form>
+            <input type="button" class="btn btn-primary pull-left" type="submit" id="newuser"style="margin-left:23%;" href="#" routerLink="/register" value="New User ?"/>
+            <button class="btn btn-link pull-right" id="passwordchange" style="margin-right:23%;" href="#" routerLink="/forgetpasswrd">Forgot Password?</button>
+        </main>
+        
+        </div>
+    </div>

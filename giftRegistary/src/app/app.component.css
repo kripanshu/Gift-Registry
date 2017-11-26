@@ -1,0 +1,13 @@
+#body1
+{
+    background-image: url('../assets/images/background.jpg');
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}

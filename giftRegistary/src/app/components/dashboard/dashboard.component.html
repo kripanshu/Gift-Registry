@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <section id="registry">
+  <p>{{loggedInUserEmail}}</p>
+        <table width="100%">
+          <tr>
+            <td><input type="text" id="searchBox" class="search_box" />
+            <span class="reset_hint"><i>Esc</i> to reset search</span></td>
+          </tr>
+          <tr>
+            <td>
+          <table id="myTable" width="100%" class="table table-condensed table-hover">
+      <tr  style="color: #fed136; background: black;">
+     <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+      <th onclick="sortTable(0)">Name</th>
+      <th onclick="sortTable(1)">Country</th>
+      <th onclick="sortTable(2)">Population</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Berglunds snabbkop</td>
+      <td>Sweden</td>
+      <td>895659</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>UK</td>
+      <td>7556284526</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Germany</td>
+      <td>888</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+    <tr>
+      <td>Koniglich Essen</td>
+      <td>Germany</td>
+      <td>845168</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Italy</td>
+      <td>49494</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+    <tr>
+      <td>Paris specialites</td>
+      <td>France</td>
+      <td>321564</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>UK</td>
+      <td>55</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Canada</td>
+      <td>8445454545</td>
+      <td><input type="checkbox" name="itemnumber"></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+  <script type="text/javascript">
+         new TableSearch('searchBox', 'myTable', { noResultsText: 'Nothing found! Try again' }).init();
+  </script>
+  <div id="btnwrapper">
+    <button type="submit" class="btn btn-primary btn-lg"> Add Items to Registry</button>
+  </div>
+  </section>
+  
+  </div>
+  

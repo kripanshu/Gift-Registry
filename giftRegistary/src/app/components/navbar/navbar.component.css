@@ -1,0 +1,12 @@
+#mainNav .navbar-brand{color:#fed136;font-family:Kaushan Script,'Helvetica Neue',Helvetica,Arial,cursive}
+#mainNav .navbar-brand.active,#mainNav .navbar-brand:active,#mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{color:#fec503}
+#mainNav .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+   
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    background-color: #fed136;
+    font-family: Kaushan Script,'Montserrat','Helvetica Neue',Helvetica,Arial,sans-serif;
+}

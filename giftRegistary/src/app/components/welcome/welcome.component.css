@@ -1,0 +1,16 @@
+#welcome{
+    width: 35%;
+    height: 10em;
+    border-radius: 12px;
+    background-color:#fed136 ;
+    color: black;
+    align-self: center;
+    font-family: Montserrat,'Kaushan Script','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 100%;
+}
+.btn, #newuser:hover,#welcome:hover{
+	background-color:black ;
+    color: #fed136;
+    border: none;
+    cursor: pointer;
+}

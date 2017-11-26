@@ -1,0 +1,82 @@
+<div class="container" id="registerform">
+    <div class="row main">
+        <div class="container" id="formContainer">
+            <main id="mainregister" >
+                <form class="form-register" id="register" role="form">
+                    <h3 class="form-register-heading" id="formheader"><b>Register</b></h3>
+                  <h5>Name :</h5>
+                    <input type="text" class="form-control"
+                    [ngClass]="{'is-invalid':userfirstname.errors?.required && userfirstname.touched }"
+                    [(ngModel)]="firstName_input" 
+                    #userfirstname = "ngModel"
+                     name="firstname" id="firstname" placeholder="First Name" required autofocus>
+                     <div *ngIf="userfirstname.errors?.required && userfirstname.touched" class="invalid-feedback">
+                            first name is required.
+                    </div>
+                    <div *ngIf="userfirstname.errors?.required && userfirstname.touched" class="invalid-feedback">
+                            first name is invalid.
+                    </div> 
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="middleName_input" 
+                    name="midinit" id="midinit" placeholder="Middle Initial" maxlength="1">
+                    <input type="text" class="form-control" 
+                    [ngClass]="{'is-invalid':userlastname.errors?.required && userlastname.touched }"
+                    [(ngModel)]="lastName_input" 
+                    #userlastname = "ngModel"
+                    name="lastname" id="lastname" placeholder="Last Name" required>
+                    <div *ngIf="userfirstname.errors?.required && userfirstname.touched" class="invalid-feedback">
+                            last name is required.
+                    </div>
+                    <div *ngIf="userfirstname.errors?.required && userfirstname.touched" class="invalid-feedback">
+                            last name is invalid.
+                    </div>  
+                    <h5>Email Address:</h5>
+                    <input type="email" class="form-control" 
+                    [ngClass]="{'is-invalid':userEmail.errors?.required && userEmail.touched ||userEmail.errors?.pattern}"
+                    [(ngModel)]="email_input" 
+                    #userEmail = "ngModel"
+                    pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+                    name="loginEmail" id="loginEmail" placeholder="Email address" required >
+                    <div *ngIf="userEmail.errors?.required && userEmail.touched" class="invalid-feedback">
+                            Email is required.
+                            </div>
+                            <div *ngIf="userEmail.errors?.pattern && userEmail.touched" class="invalid-feedback">
+                            Email is invalid.
+                            </div>
+                    <h5>Phone Number:</h5>
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="phone_input" 
+                    name="phonenumber" id="phonenumber" placeholder="Phone number" pattern="[0-9]" required > 
+                    <h5>Address:</h5>
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="street_input"
+                    name="street" id="street" placeholder="Street" required >
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="zipcode_input"
+                    name="zipcode" id="zipcode" placeholder="Zipcode" pattern="[0-9]" required > 
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="state_input"
+                    name="state" id="state" placeholder="State" maxlength="2" required > 
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="country_input"
+                    name="country" id="country" placeholder="Country" required >                     
+                    <br/>
+                    <input type="password" class="form-control" 
+                    [ngClass]="{'is-invalid':userpassword.errors?.required && userpassword.touched || userpassword.errors?.pattern}"
+                     [(ngModel)]="password_input"
+                     #userpassword = "ngModel"
+                     pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,100})/"
+                    name="registerPass" id="registerPass" placeholder="Password" required>
+                    <div *ngIf="userpassword.errors?.required &&userpassword.touched" class="invalid-feedback">
+                             password is required.
+                    </div>
+                    <div *ngIf="userpassword.errors?.pattern && userpassword.touched" class="invalid-feedback">
+                            password is invalid. Use 0-9,A-Z,a-z,or special characters
+                    </div>         
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="registerNow()">Lets get started!</button>
+                    <br/>
+                </form>
+            </main>
+        </div>
+    </div>
+</div>
