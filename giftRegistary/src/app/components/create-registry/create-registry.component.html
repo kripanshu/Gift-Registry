@@ -1,0 +1,178 @@
+<main role="main" style="margin-bottom:5%">
+  
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h4 class="display-4">Hello {{loggedInUserName}}</h4>
+            <a href="#" routerLink="/dashboard" class="btn btn-warning" style="float:right; margin-left:5px;">
+              <i class="fa fa-user" aria-hidden="true"></i> User 
+            </a>
+            <p>Welcome to your homepage. Create Registry and share it with people by making it public. You can also keep your registry to yourself by making it private.</p>
+          
+              
+            
+          </div>
+        </div>
+        <div class="jumbotron col">
+  <div class="container "style="background-color:#eee; ">
+    <h4 class="text-center">CREATE REGISTRY</h4>
+      <form novalidate #f="ngForm" (ngSubmit)="setCredentials(f)" style="background-color:#FAFAFA; " >
+          <div class="form-group row ">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Repositry Name:</label>
+            <div class="col-sm-10 ml-10">
+                <input type="text" class="form-control" 
+                [(ngModel)]="registry_name"
+                [ngClass]="{'is-invalid':registryname.errors?.required && registryname.touched }"
+               #registryname= "ngModel"
+                name="registryname" id="registryName" placeholder="Registry Name"required>
+              <div *ngIf="registryname.errors?.required && registryname.touched" class="invalid-feedback">
+                  Registry name is required.
+          </div>
+            </div>
+          </div>
+         
+     
+          <p class="mx-auto">This will be used as a unique URL for your repository</p>
+          
+              <div class="form-row align-items-center">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Repositry URL:</label>
+                <div class="col-auto">
+                  <!-- <label class="sr-only" for="inlineFormInputGroup">URL</label> -->
+                  <div class="input-group mb-2 mb-sm-0">
+                    <div class="input-group-addon">blaureg-</div>
+                    <input type="text" class="form-control" name="registryurl"
+                    [ngClass]="{'is-invalid':registryurl.errors?.required && registryurl.touched }"
+                    [(ngModel)]="registry_url" 
+                    #registryurl = "ngModel" 
+                     id="inlineFormInputGroup" placeholder="RegistryUrl">
+                     <div *ngIf="registryurl.errors?.required && registryurl.touched" class="invalid-feedback">
+                        Registry url is required.
+                  </div>
+                  </div>
+                </div>
+               
+              </div>
+              
+          
+            
+        
+          <!-- <fieldset class="form-group mt-5">
+            <div class="row">
+              <legend class="col-form-legend col-sm-2">Registry Access:</legend>
+              <div class="col-sm-6">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gridRadios"
+                    [(ngModel)]="access_input"
+                    id="gridRadios1" value="option1" checked>
+                   Private
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gridRadios"
+                    [(ngModel)]="access_input"
+                    id="gridRadios2" value="option2">
+                   Public
+                  </label>
+                </div>
+                
+              </div>
+            </div>
+          </fieldset> -->
+
+          <br>
+          <div class="row">
+              <legend class="col-form-legend col-sm-2 ">Registry Access:</legend>
+              <div class="form-group col-md-4 mt-2">
+                
+                  <select #selectElem (change)="accessInput(selectElem.value)">
+                    <option *ngFor="let access of access_input" [value]="access.id"name="optionname">
+                      {{access.name}}
+                    </option>
+                  </select>
+              </div>
+          </div>
+
+          <br>
+
+          <div class="form-group row ">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Event Date:</label>
+          <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                  <button class="input-group-addon" (click)="d.toggle()" type="button">
+                    
+                  </button>
+                </div>
+              </div>
+            </form>
+         </div>
+          <div class="form-group row">
+            <div class="col-sm-10 mx-auto" align="center" >
+                <input type="submit" class="btn btn-warning "  value="Create"style="float:left; margin-left:10%" >
+                
+              
+            </div>
+            <div class="col-sm-10 mx-auto" align="center">
+                
+              </div>
+          </div>
+        </form>  
+  </div> 
+</div>
+<!-- code to share registry form -->
+<button  class="btn btn-warning "   (click)="hide=!hide"style="text-align:center; margin-left:10%;" >Share Registry</button>
+<div class="container"  [hidden]="hide">
+<form novalidate #f="ngForm" (ngSubmit)="shareRegistry(f)" style="background-color:#FAFAFA; padding:3%"> 
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="regisyname"
+      [(ngModel)]="shareRegistryEmail"
+      aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="col-md-6" style="background-color:darkgray; padding-right:1%; overflow:auto" >
+      <h5 class="mx-auto">My Registries</h5>
+      <div class="list-group">
+          <ul class="list-group">
+              <li class="list-group-item list-group-item-action"  *ngFor="let arr1 of PrivateRegistries" (click)="getRegistryUrlFromList(arr1)" >{{ arr1 }}</li>
+            </ul>
+        </div>
+        <!-- <ng-template #otherTmpl>No Private Repositry found</ng-template> -->
+    </div>
+    <input type="submit" class="btn btn-warning" value="Share" style="margin-left:30%">
+  </form>
+</div>
+  <br/>
+        <div class="container" style="background-color:whitesmoke; overflow:auto;">
+          
+           <div class="row">
+            
+            <div class="col-md-6" style="background-color:darkgray; padding-right:1%" >
+              <h2 class="mx-auto">My Registries</h2>
+              <div class="list-group">
+                  <ul class="list-group">
+                      <li class="list-group-item list-group-item-action"  *ngFor="let arr1 of PrivateRegistries" (click)="navigateOnPrivateRegistryList(arr1)" >{{ arr1 }}</li>
+                    </ul>
+                </div>
+                <!-- <ng-template #otherTmpl>No Private Repositry found</ng-template> -->
+            </div>
+            <div class="col-md-6"style="background-color:darkgray; padding-right:1%">
+              <h2 class="mx-auto">Shared Registry</h2>
+              <div class="list-group">
+                  <ul class="list-group">
+                      <li class="list-group-item list-group-item-action" *ngFor="let arr of PrivateSharedRegistriesUrl" (click)="navigateOnSharedRegistryList(arr)" >{{ arr }}</li>
+                    </ul>
+                </div>
+                <!-- <ng-template #otherTmpl1>No Shared Repositry found</ng-template> -->
+            </div>
+            <hr>
+          </div>
+   </div> 
+
+
+        <p class="mx-auto" style="color:#fff; text-align:center">{{loggedInUserEmail}}</p>
+        <hr>
+      </main>

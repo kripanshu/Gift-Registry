@@ -1,0 +1,71 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Welcome</h1>
+      <p>Welcome to BLAUGRANES Inventory, Introduce new products and make the BLAUGRANES world better.</p>
+    </div>
+  </div>
+  <hr>
+  <div class="container" id="holder">
+    <h4 class="mx-auto" align="center">Inventory</h4>
+    <ng2-smart-table [settings]="settings_admininventory"
+     [source]="registryItemsSource" #f 
+     (delete)="deleteItem($event)"
+     >
+  </ng2-smart-table>
+    
+  </div>
+  <hr> 
+  <!-- The add form -->
+  <form class="container" novalidate #f="ngForm" (ngSubmit)="addInventoryItems(f)">
+    <h4 align="center">Add Item</h4>
+   <div class="form-group">
+              <label >Item Name</label>
+              <input type="text" class="form-control" id="itemName"
+              [(ngModel)]="item_Name"
+              [ngClass]="{'is-invalid':itemName11.errors?.required && itemName11.touched }"
+             #itemName11= "ngModel"
+              name="itemName1"   placeholder="ItemName">
+            </div>
+          
+            <div class="form-group">
+                <label >Description</label>
+                <input type="text" class="form-control" id="desc"
+                [(ngModel)]="description"
+                [ngClass]="{'is-invalid':desc1.errors?.required && desc1.touched }"
+               #desc1 ="ngModel"
+                name="des"   placeholder="description">
+              </div>
+            
+              <div class="form-group">
+                  <label >Category</label>
+                  <input type="text" class="form-control" id="category"
+                  [(ngModel)]="category"
+                  [ngClass]="{'is-invalid':category1.errors?.required && category1.touched }"
+                 #category1 ="ngModel"
+                  name="price3"   placeholder="category">
+                </div>
+              
+                <div class="form-group">
+                    <label >Price</label>
+                    <input type="text" class="form-control" id="price"
+                    [(ngModel)]="price"
+                    [ngClass]="{'is-invalid':price1.errors?.required && price1.touched }"
+                   #price1 ="ngModel"
+                    name="price"   placeholder="price">
+                  </div>
+                  <div class="form-group">
+                      <label >Quantity</label>
+                      <input type="text" class="form-control" id="quant"
+                      [(ngModel)]="quantity"
+                      [ngClass]="{'is-invalid':quant1.errors?.required && quant1.touched }"
+                     #quant1 ="ngModel"
+                      name="price1"   placeholder="quantity">
+                    </div>
+                
+      
+           
+    <input type="Submit" value="Add" name="Add" class="btn btn-warning" align="center">
+  </form>
+
+  

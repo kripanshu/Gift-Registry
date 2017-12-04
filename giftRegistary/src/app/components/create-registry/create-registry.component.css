@@ -1,0 +1,10 @@
+
+/* .jumbotron{
+opacity: 0.6;
+filter: alpha(opacity=10);
+} */
+
+form
+{
+    z-index: 20;
+}

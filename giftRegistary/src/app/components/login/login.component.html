@@ -2,14 +2,14 @@
     <div class="row main">
         <div class="container" id="formContainer">
             <main id="mainlogin" >
-            <form class="form-signin" id="login" role="form" (submit)="onSubmit()">
+            <form class="form-signin" novalidate #f="ngForm" id="login" role="form" (ngSubmit)="onSubmit(f)">
                 <h3 class="form-signin-heading" id="formheader">Log in</h3>
                 <input type="email" class="form-control"
                 [ngClass]="{'is-invalid':userEmail.errors?.required && userEmail.touched ||userEmail.errors?.pattern}"
                 [(ngModel)]="email_input" 
                 #userEmail = "ngModel"
                 pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-                name="loginEmail" id="loginEmail" placeholder="Email address" required autofocus>
+                name="loginEmail" id="loginEmail" placeholder="Email address" required >
                 <div *ngIf="userEmail.errors?.required && userEmail.touched" class="invalid-feedback">
                         Email is required.
                         </div>
@@ -24,12 +24,35 @@
             <div *ngIf="userPassword.errors?.required && userPassword.touched" class="invalid-feedback">
                     Password is required.
                     </div>
-                <input class="btn btn-lg btn-primary btn-block" href="#" type="submit" value="SignIn">
+                <input class="btn btn-lg btn-primary btn-block"  type="submit" value="SignIn">
                 <br/>
+                
+                <div class="row">
+                    <legend class="col-form-legend col-sm-3 ">Role :</legend>
+                    <div class="form-group col-md-2 mt-2">
+                      
+                        <select #selectElem (change)="roleInput(selectElem.value)">
+                          <option *ngFor="let role of role_input" [value]="role.id">
+                            {{role.name}}
+                          </option>
+                        </select>
+                    </div>
+                </div>
+      
+                <br>
             </form>
+          
+
             <input type="button" class="btn btn-primary pull-left" type="submit" id="newuser"style="margin-left:23%;" href="#" routerLink="/register" value="New User ?"/>
-            <button class="btn btn-link pull-right" id="passwordchange" style="margin-right:23%;" href="#" routerLink="/forgetpasswrd">Forgot Password?</button>
+            <button class="btn btn-link pull-right" id="passwordchange" style="margin-right:23%;" href="#" routerLink="/forgetpasswrd" >Forgot Password?</button>
+          <div class="div1" style="margin-left:40%; margin-top:15%">  <a id="google"class="btn btn-social-icon btn-google" >
+                <span class="fa fa-google"></span>
+              </a>
+              <a id="facebook"class="btn btn-social-icon btn-facebook" >
+                <span class="fa fa-facebook"></span>
+              </a>
+            </div>
         </main>
-        
+       
         </div>
     </div>

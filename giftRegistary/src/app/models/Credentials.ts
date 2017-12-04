@@ -1,14 +1,14 @@
 export interface Credentials
 {
-    firstName?: string;
-    lastName?:string;
-    middleName?:string;
-    phone?: number;
+    firstName: string;
+    lastName:string;
     email: string;
-    street?:string;
-    zipcode?:number;
-    state?:string;
-    country?: string;
     password: string;
+    street:string;
+    state:string;
+    zipcode:string;
+    country:string;
+    securityQuestion: string;
+    securityAnswer: string;
     
 }

@@ -11,12 +11,20 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
+        <li class="nav-item active" *ngIf="userIs" >
+            <a class="nav-link">Welcome {{loggedInUserName}} </a>
+          </li>
+
+
+      <li class="nav-item active" *ngIf="!userIs">
         <a class="nav-link" href="#"routerLink="/login">Login </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active" *ngIf="!userIs">
         <a class="nav-link" href="#"routerLink="/register">Register</a>
       </li>
+      <li class="nav-item active" *ngIf="userIs">
+          <a class="nav-link" href="#"routerLink="/" (click)="logout()" >Logout</a>
+        </li>
       <li class="nav-item active">
           <a class="nav-link" href="#"routerLink="/aboutus">AboutUs</a>
         </li>

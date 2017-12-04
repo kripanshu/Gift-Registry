@@ -1,33 +1,50 @@
-<div class="question" *ngFor="let question of questions">
-        <div class="card">
-          <div class="card-header">
-            {{ question.text }} <a href="#" routerLink="/forgetpasswrd" style="float:right;"class="btn btn-link" (click)="question.hide = !question.hide">Show</a>
-          </div>
-          <div class="card-block" [hidden]="question.hide">
-        
-                <input type="text" placeholder="Answer here " class="form-control"  name="answer">
-              </div>
-        </div>
-        <br>
-      </div>
+<div class="cont">
+  <form class="form-signin" novalidate #f="ngForm" id="verify" role="form" (ngSubmit)="getUrl(f)">
+    <h3 class="form-signin-heading" id="formheader">Email</h3>
+    <input type="Email" class="form-control"
+    [ngClass]="{'is-invalid':answer.errors?.required && answer.touched}"
+    [(ngModel)]="loggedInuserEmail" 
+    #answer = "ngModel"
+    pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+    name="loginEmail" id="loginEmail" placeholder="Email" required autofocus>
+    <input class="btn btn-lg btn-warning"  type="submit" value="Validate" style="margin-left:30%" >
+  </form>
+</div>
 
-      <div class="card">
+<div class="container" id="logform" >
+    <div class="row main">
+        <div class="container" id="formContainer">
+            <main id="mainlogin" >
+            <form class="form-signin" novalidate #f="ngForm" id="login" role="form" (ngSubmit)="checkUser(f)">
+                <h3 class="form-signin-heading" id="formheader">Question</h3>
+                <p><b>{{question}}</b></p>
+                <br/>
+              
+              <h3 class="form-signin-heading" id="formheader">Answer</h3>
+                <input type="text" class="form-control"
+                [ngClass]="{'is-invalid':answer.errors?.required && answer.touched}"
+                [(ngModel)]="user_answer" 
+                #answer = "ngModel"
+                style="font-style:oblique"
+                name="loginEmail" id="loginEmail" placeholder="Answer" required autofocus>
+            
+                <input class="btn btn-lg btn-primary btn-block"  type="submit" value="Password" (click)="hide =!hide" >
+                
+                
+               
+      
+                <br>
+            </form>
+               </main>
+        
+        </div>
+    </div>
+    </div>
+      <div class="card" [hidden]="hide">
             <div class="card-header" style="text-align:center;">
-              Change Password
+              Your Password
             </div>
-            <div class="card-block">
-              <form (submit)="addQuestion()">
-                <div class="form-group">
-                  <label for="text">New Password</label>
-                  <input type="text" class="form-control"  name="text">
-                </div>
-                <div class="form-group">
-                  <label for="text">Confirm Password</label>
-                  <input type="text" class="form-control"  name="answer">
-                </div>
-                <input type="submit" style="margin-left: 48%;"class="btn btn-primary" value="Submit">
-              </form>
-            </div>
+           <p>{{password}}</p>
           </div>
-          
+        
       

@@ -1,19 +1,4 @@
-
-#btnwrapper{
-    text-align:center;
-}
-.btn{
-	background-color:black ;
-    color: #fed136;
-    border: none;	
-}
-.btn:hover {
-    background-color:#fed136;
-    color: black;
-}
-.btn:active {
-	background-color:#fed136;
-    color: black;
-  	box-shadow: 0 5px #666;
-  	transform: translateY(4px);
+.container
+{
+    background-color: #fff
 }

@@ -36,6 +36,36 @@
   	box-shadow: 0 5px #666;
   	transform: translateY(4px);
 }
+ #google:hover,#facbook:hover{
+	background-color:#DD4B39 ;
+    color: #fff;
+    border: none;
+}
+#google:hover {
+    background-color:#DD4B39;
+    color:white;
+}
+#google:active {
+	background-color:#DD4B39;
+    color: white;
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
+}
+#facbook:hover{
+	background-color:#3B5998 ;
+    color: #fff;
+    border: none;
+}
+#facebook:hover {
+    background-color:#3B5998;
+    color:white;
+}
+#facebook:active {
+	background-color:#3B5998;
+    color: white;
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
+}
 .filter {
     filter: blur(20px);
 }

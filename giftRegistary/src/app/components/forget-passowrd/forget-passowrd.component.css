@@ -122,3 +122,6 @@ body {
     filter: blur(20px);
     z-index: -1;
   }
+.cont{
+    background-color:#fff 
+}

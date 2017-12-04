@@ -8,13 +8,13 @@ questions : Question[];
     this.questions = [
       {
         text:'What is your favorite footballer name?',
-        answer: 'My name is Lionel Messi',
-        hide: true
+        answer: 'My name is Lionel Messi'
+    
       },
       {
         text:'What is your favorite color?',
-        answer: 'My favorite color is blue',
-        hide: true
+        answer: 'My favorite color is blue'
+       
       },
       
     ];

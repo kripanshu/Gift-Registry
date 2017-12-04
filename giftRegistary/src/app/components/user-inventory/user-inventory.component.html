@@ -1,0 +1,21 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Welcome</h1>
+    <p>Welcome to the world of products where you find all the stuff that meet your needs. Search through the Inventory and find the best product that matches your choice.</p>
+  </div>
+</div>
+<hr>
+<div class="container" id="holder">
+  <h4 class="mx-auto" align="center">Inventory</h4>
+  <ng2-smart-table [settings]="settings_inventory" [source]="data_inventory" #d 
+  (edit)="editClicked(d)"
+  (delete)="deleteItem(d)"
+  ></ng2-smart-table>
+  
+</div>
+<hr>
+<div class="container col">
+<button type="button" class="btn btn-warning" style="text-align:center" (click)="visitRegistry()">Visit Registry</button>
+</div>
+<hr>

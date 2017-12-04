@@ -1,0 +1,10 @@
+<hr>
+<hr>
+<div class="container" id="holder">
+  <h4 class="mx-auto" align="center">{{regurl}}</h4>
+  <ng2-smart-table [settings]="settings_registry" [source]="registryItemsSources" 
+  (userRowSelect)="assignMe($event)"
+  ></ng2-smart-table>
+  
+</div>
+<hr>

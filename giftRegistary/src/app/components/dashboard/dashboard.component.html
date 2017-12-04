@@ -1,80 +1,105 @@
-<div class="container-fluid">
-    <section id="registry">
-  <p>{{loggedInUserEmail}}</p>
-        <table width="100%">
-          <tr>
-            <td><input type="text" id="searchBox" class="search_box" />
-            <span class="reset_hint"><i>Esc</i> to reset search</span></td>
-          </tr>
-          <tr>
-            <td>
-          <table id="myTable" width="100%" class="table table-condensed table-hover">
-      <tr  style="color: #fed136; background: black;">
-     <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
-      <th onclick="sortTable(0)">Name</th>
-      <th onclick="sortTable(1)">Country</th>
-      <th onclick="sortTable(2)">Population</th>
-      <th></th>
-    </tr>
-    <tr>
-      <td>Berglunds snabbkop</td>
-      <td>Sweden</td>
-      <td>895659</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-    <tr>
-      <td>North/South</td>
-      <td>UK</td>
-      <td>7556284526</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Germany</td>
-      <td>888</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-    <tr>
-      <td>Koniglich Essen</td>
-      <td>Germany</td>
-      <td>845168</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-    <tr>
-      <td>Magazzini Alimentari Riuniti</td>
-      <td>Italy</td>
-      <td>49494</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-    <tr>
-      <td>Paris specialites</td>
-      <td>France</td>
-      <td>321564</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-    <tr>
-      <td>Island Trading</td>
-      <td>UK</td>
-      <td>55</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-    <tr>
-      <td>Laughing Bacchus Winecellars</td>
-      <td>Canada</td>
-      <td>8445454545</td>
-      <td><input type="checkbox" name="itemnumber"></td>
-    </tr>
-  </table>
-  </td>
-  </tr>
-  </table>
-  <script type="text/javascript">
-         new TableSearch('searchBox', 'myTable', { noResultsText: 'Nothing found! Try again' }).init();
-  </script>
-  <div id="btnwrapper">
-    <button type="submit" class="btn btn-primary btn-lg"> Add Items to Registry</button>
-  </div>
-  </section>
-  
+<hr>
+<div class="container" id="logform">
+    <div class="row main">
+        <div class="container" id="formContainer">
+            <main id="mainlogin" >
+              
+  <form class="form-signin" novalidate #f="ngForm" id="login" role="form" (ngSubmit)="onSubmitProfile(f)">
+      <br>
+<div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label">First Name</label>
+    <div class="col-10">
+      <input class="form-control" type="text" 
+      [(ngModel)]="dashboard_data.firstName"
+      value="First Name" name="first name" id="example-text-input">
+    </div>
   </div>
   
+  <div class="form-group row">
+    <label for="example-search-input" class="col-2 col-form-label">Last Name</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+      [(ngModel)]="dashboard_data.lastName" 
+      name="last name"
+     value="lastName" id="example-search-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-email-input" class="col-2 col-form-label">Email</label>
+    <div class="col-10">
+      <input class="form-control" type="email" 
+      [(ngModel)]="dashboard_data.email" 
+      name="email"
+      value="email" id="example-email-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-url-input" class="col-2 col-form-label">Street</label>
+    <div class="col-10">
+      <input class="form-control" type="text" 
+      [(ngModel)]="dashboard_data.street" 
+      name="street"
+      value="street" id="example-url-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-tel-input" class="col-2 col-form-label">State</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+      [(ngModel)]="dashboard_data.state"
+      name="state"
+      value="state" id="example-tel-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-number-input" class="col-2 col-form-label">Zipcode</label>
+    <div class="col-10">
+      <input class="form-control" type="number"
+      name="zipcode"
+      [(ngModel)]="dashboard_data.zipcode"
+      value="42" id="text">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-datetime-local-input" class="col-2 col-form-label">Country</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+      [(ngModel)]="dashboard_data.country"
+      name="country"
+      value="country" id="example-datetime-local-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-date-input" class="col-2 col-form-label">Security Question</label>
+    <div class="col-10">
+      <input class="form-control" type="text" 
+      [(ngModel)]="dashboard_data.securityQuestion"
+      name="question"
+      value="question" id="example-date-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-date-input" class="col-2 col-form-label">Security Answer</label>
+    <div class="col-10">
+      <input class="form-control" type="text" 
+      [(ngModel)]="dashboard_data.securityAnswer"
+      name="answer"
+      value="answer" id="example-date-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-password-input" class="col-2 col-form-label">Password</label>
+    <div class="col-10">
+      <input class="form-control" type="password" 
+      [(ngModel)]="dashboard_data.password"
+      name="password"
+      value="***" id="example-password-input">
+    </div>
+  </div>
+<input type="submit" class="btn btn-warning" value="Submit" style="text-align:center; margin-left:50%;">
+
+</form>
+</main>
+</div>
+</div>
+</div>
